@@ -23,21 +23,28 @@ require('lazy').setup({
 	require("plugins.noice"),
 	require("plugins.codecompanion"),
 	require("plugins.markview"),
-	-- require("plugins.musicnvim"),
+	require("plugins.cmaketools"),
+	require("plugins.flow"),
+	require("plugins.musicnvim"),
 	--'tpope/vim-sleuth',
 	{'numToStr/Comment.nvim', opts={}},
+	{
+	},
 	{ -- auto-pair plugin
 		'windwp/nvim-autopairs',
 		event = "insertEnter",
 		config = true
 	},
-	{ --tokyonight colorscheme
-		'folke/tokyonight.nvim',
-		init = function()
-			vim.cmd.colorscheme 'tokyonight-night'
-			vim.cmd.hi 'Comment gui=none'
-		end,
-	},
+	-- { --tokyonight colorscheme
+	-- 	'folke/tokyonight.nvim',
+	-- 	init = function()
+	-- 		require("tokyonight").setup{
+	-- 			transparent = true,
+	-- 		}
+	-- 		vim.cmd.colorscheme 'tokyonight-night'
+	-- 		vim.cmd.hi 'Comment gui=none'
+	-- 	end,
+	-- },
 	{ -- mini.icon plugin
 		'echasnovski/mini.nvim', version = false
 	},
