@@ -15,6 +15,7 @@ return{  -- oil.nvim file explorer
 				  -- "size",
 				  -- "mtime",
 				},
+
 				-- Buffer-local options to use for oil buffers
 				buf_options = {
 				  buflisted = false,
@@ -63,12 +64,12 @@ return{  -- oil.nvim file explorer
 				keymaps = {
 				  ["g?"] = "actions.show_help",
 				  ["<CR>"] = "actions.select",
-				  ["<C-s>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
-				  ["<C-h>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
+				  ["<C-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
+				  ["<C-f>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
 				  ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
 				  ["<C-p>"] = "actions.preview",
 				  ["<C-c>"] = "actions.close",
-				  ["<C-l>"] = "actions.refresh",
+				  ["<C-r>"] = "actions.refresh",
 				  ["-"] = "actions.parent",
 				  ["_"] = "actions.open_cwd",
 				  ["`"] = "actions.cd",
@@ -79,7 +80,7 @@ return{  -- oil.nvim file explorer
 				  ["g\\"] = "actions.toggle_trash",
 				},
 				-- Set to false to disable all of the above keymaps
-				use_default_keymaps = true,
+				use_default_keymaps = false,
 				view_options = {
 				  -- Show files and directories that start with "."
 				show_hidden = false,
@@ -122,8 +123,8 @@ return{  -- oil.nvim file explorer
 				float = {
 				  -- Padding around the floating window
 				  padding = 2,
-				  max_width = 0,
-				  max_height = 0,
+				  max_width = 30,
+				  max_height = 30,
 				  border = "rounded",
 				  win_options = {
 				    winblend = 0,
@@ -164,7 +165,7 @@ return{  -- oil.nvim file explorer
 				-- Configuration for the floating progress window
 				progress = {
 					max_width = 0.9,
-					min_width = { 40, 0.4 },
+					min_width = { 20, 0.5 },
 					width = nil,
 					max_height = { 10, 0.9 },
 					min_height = { 5, 0.1 },
