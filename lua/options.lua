@@ -36,19 +36,3 @@ vim.opt.splitkeep = "screen"
 --disable startup warnings
 vim.diagnostic.config({virtual_text = false})
 
---background setting
--- vim.opt.termguicolors = true
--- vim.opt.background = 'dark'  -- or 'light' depending on your preference
--- vim.cmd([[
---   augroup TerminalBackground
---     autocmd!
---     autocmd ColorScheme * highlight Normal guibg=NONE ctermbg=NONE
---   augroup END
--- ]])
-
--- vim.api.nvim_create_autocmd("VimEnter", {
--- 	callback = function ()
--- 		vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
--- 		vim.cmd("hi Nontext guibg=NONE ctermbg=NONE")
--- 	end
--- })

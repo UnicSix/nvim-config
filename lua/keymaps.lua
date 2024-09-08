@@ -8,3 +8,4 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', ';', ':', { desc = 'Enter your cmd'})
 vim.keymap.set('n', '<C-b>d', ':bd!<CR>', { desc = 'Delete Buffer'})
 vim.keymap.set('n', '<CR>', ':noh<CR>', {desc = 'No Highlight Search'})
+
