@@ -35,6 +35,7 @@ require("lazy").setup({
 	require("plugins.toggleterm"),
 	require("plugins.project"),
 	require("plugins.neocodeium"),
+	require("plugins.dap"),
 	--'tpope/vim-sleuth',
 	{ "numToStr/Comment.nvim", opts = {} },
 	{ -- auto-pair plugin
