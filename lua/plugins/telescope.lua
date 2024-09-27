@@ -16,6 +16,9 @@ return{
 		},
 		config = function()
 		require('telescope').setup({
+			defaults = {
+				wrap_results = true,
+			},
 			extensions = {
 				['ui-select'] = {
 					require('telescope.themes').get_dropdown(),
@@ -38,10 +41,6 @@ return{
 							local max_width = vim.api.nvim_win_get_width(0) - 4
 							local lines = {}
 							for line in string.gmatch(entry.text, "[^\r\n]+") do
-								while #line > max_width do
-									table.insert(lines, line:sub(1, max_width))
-									line = line:sub(max_width + 1)
-								end
 								table.insert(lines, line)
 							end
 							vim.api.nvim_buf_set_lines(self.state.bufnr, 0, -1, false, lines)

@@ -5,6 +5,7 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
+vim.opt.cursorline = true
 vim.opt.showmode = false
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.undofile = true
@@ -24,7 +25,20 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 1
 vim.opt.expandtab = false -- Use tabs instead of spaces
+vim.opt.swapfile = false
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "cpp", "c", "h" },
+  callback = function()
+    vim.opt_local.autoindent = true
+    vim.opt_local.smartindent = true
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.expandtab = false
+  end,
+})
 --fold nethod
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
@@ -35,4 +49,3 @@ vim.opt.splitkeep = "screen"
 
 --disable startup warnings
 vim.diagnostic.config({virtual_text = false})
-

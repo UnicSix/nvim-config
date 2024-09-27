@@ -16,6 +16,12 @@ return{
 			{ 'folke/neodev.nvim', opts = {} },
     	},
 		config = function()
+			vim.diagnostic.config({
+				virtual_text = false,
+				signs = true,
+				underline = true,
+				update_in_insert = true,
+			})
 			vim.api.nvim_create_autocmd('LspAttach', {
 				group = vim.api.nvim_create_augroup('kickstart-lsp-attach', {clear = true}),
 				callback = function(event)
@@ -82,7 +88,6 @@ return{
 						".vs",
 						".clang-tidy",
 						".clang-format",
-						".compile_commands.json",
 						".compile_flags.txt",
 						".configure.ac",
 						"CMakeLists.txt",
@@ -91,7 +96,6 @@ return{
 				glsl_analyzer = {
 					cmd = { "glsl_analyzer" },
 				},
-				tsserver = {},
 
 				lua_ls = {
 					settings = {
@@ -109,6 +113,10 @@ return{
 			vim.list_extend(ensure_installed, {
 				'stylua', -- Used to format Lua code
 				'clang-format',
+				'cmake-language-server',
+				'lua-language-server',
+				'clangd',
+				'glsl_analyzer',
 			})
 			require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -124,6 +132,23 @@ return{
 					end,
 				},
 			}
+			require("mason-lspconfig").setup_handlers({
+				function(server_name)
+					require("lspconfig")[server_name].setup{}
+				end,
+				["lua_ls"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.lua_ls.setup{
+						settings = {
+							Lua = {
+								diagnostics = {
+									globals = { "vim" }
+								}
+							}
+						}
+					}
+				end,
+			})
 		end,
 	},
 }
