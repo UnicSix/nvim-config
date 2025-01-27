@@ -1,5 +1,7 @@
 return{
 	"mrjones2014/smart-splits.nvim",
+  event = "BufNew",
+  lazy=true,
 	config = function ()
 		require("smart-splits").setup({
 
