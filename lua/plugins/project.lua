@@ -4,6 +4,7 @@ return{ -- use telescope to intergrate with this plugin
 		require('project_nvim').setup({
 			patterns = { ".git", "CMakeLists.txt", ".clangd", ".vs"}
 		})
-		require('telescope').load_extension('projects')
+		local builtin = require('telescope').load_extension('projects')
+		vim.keymap.set('n', '<leader>tp', builtin.projects, { desc = '[T]elescope [P]rojects ' })
 	end
 }

@@ -125,7 +125,7 @@ return{  -- oil.nvim file explorer
         float = {
           -- Padding around the floating window
           padding = 5,
-          max_width = 30,
+          max_width = 45,
           max_height = 30,
           border = "rounded",
           win_options = {
@@ -198,7 +198,12 @@ return{  -- oil.nvim file explorer
 
         vim.keymap.set('n', '<leader>of', function ()
           vim.cmd('Oil --float')
-        end, { desc = 'Open Oil in float window'})
+        end, { desc = 'Open Oil in float window'}),
+
+        vim.keymap.set('n', '<leader>os', function ()
+          vim.cmd('aboveleft sp | wincmd r')
+          require('oil').open()
+        end, { desc = 'Open Oil in horizontal split window'})
       })
     end
 }

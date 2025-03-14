@@ -12,7 +12,6 @@ return{
 					return 'make install_jsregexp'
 				end)(),
 				dependencies = {
-
 				},
 			},
 			'saadparwaiz1/cmp_luasnip',

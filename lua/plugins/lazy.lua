@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
+  require("plugins.rainbow-delimiters"),
   require("plugins.oil"),
   require("plugins.telescope"),
   require("plugins.treesitter"),
@@ -26,7 +27,6 @@ require("lazy").setup({
   -- -- require("plugins.markview"),
   -- require("plugins.flow"),
   require("plugins.rose_pine"),
-  -- require("plugins.musicnvim"),
   require("plugins.lengendary"),
   require("plugins.smartsplit"),
   require("plugins.toggleterm"),

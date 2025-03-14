@@ -7,7 +7,7 @@ return{
 			--local builtin = require('telescope.builtin')
 			local headers = {
 				'plugins.headers.buda',
-				'plugins.headers.ahego',
+				-- 'plugins.headers.ahego',
 				'plugins.headers.peepoFlash',
 				-- require('plugins.headers.boob1'),
 				'plugins.headers.unaware',
