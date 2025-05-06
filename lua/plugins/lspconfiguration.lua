@@ -17,9 +17,15 @@ return{
       -- used for completion, annotations and signatures of Neovim apis
       { 'folke/neodev.nvim', opts = {} },
       },
+	-- init = function()
+	-- 	vim.api.nvim_create_autocmd({'BufWritePre'}, {
+	-- 		pattern = { '*.h', '*.c', '*.hpp', '*.cpp', '*.cc'},
+	-- 		command = "lua vim.lsp.buf.format()"
+		-- })
+	-- end,
     config = function()
       vim.diagnostic.config({
-        virtual_text = false,
+        virtual_lines = {current_line = true},
         signs = true,
         underline = true,
         update_in_insert = true,
@@ -42,6 +48,7 @@ return{
           map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
           map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[name]')
+          map('<leader>ff', vim.lsp.buf.format, '[F]ormat [F]ile')
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]elaration')
 

@@ -1,5 +1,5 @@
 return{ -- use telescope to intergrate with this plugin
-	"ahmedkhalf/project.nvim",
+	"UnicSix/project.nvim",
 	config = function ()
 		require('project_nvim').setup({
 			patterns = { ".git", "CMakeLists.txt", ".clangd", ".vs"}
