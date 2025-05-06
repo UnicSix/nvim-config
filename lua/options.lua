@@ -61,6 +61,7 @@ vim.opt.splitkeep = "screen"
 --disable startup warnings
 vim.diagnostic.config({virtual_text = false})
 
+--define glsl file type
 vim.cmd([[
     augroup glsl_filetype
         autocmd!
@@ -72,3 +73,7 @@ vim.cmd([[
         autocmd BufNewFile,BufRead *.comp set filetype=glsl
     augroup END
 ]])
+
+vim.opt.clipboard = ""
+
+vim.opt.winblend = 0

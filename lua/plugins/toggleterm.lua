@@ -3,7 +3,7 @@ return{
   version = "*",
   config = function ()
     require("toggleterm").setup({
-      shell = "pwsh",
+      shell = "/bin/bash",
       direction = 'vertical',
       open_mapping = [[<c-t]],
       shade_filetype = {},

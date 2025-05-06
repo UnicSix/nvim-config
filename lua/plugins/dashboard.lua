@@ -24,7 +24,7 @@ return{
 				config = {
 					week_header = {
 						enable = true,
-						append = rd_header,
+						-- append = rd_header,
 					},
 					shortcut = {
 					{ desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
