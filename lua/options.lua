@@ -72,3 +72,14 @@ vim.cmd([[
         autocmd BufNewFile,BufRead *.comp set filetype=glsl
     augroup END
 ]])
+vim.cmd([[
+    augroup glsl_filetype
+        autocmd!
+        autocmd BufNewFile,BufRead *.vert.hlsl set filetype=hlsl
+        autocmd BufNewFile,BufRead *.frag.hlsl set filetype=hlsl
+        autocmd BufNewFile,BufRead *.gemo.hlsl set filetype=hlsl
+        autocmd BufNewFile,BufRead *.tesc.hlsl set filetype=hlsl
+        autocmd BufNewFile,BufRead *.tese.hlsl set filetype=hlsl
+        autocmd BufNewFile,BufRead *.comp.hlsl set filetype=hlsl
+    augroup END
+]])
