@@ -73,7 +73,30 @@ vim.cmd([[
         autocmd BufNewFile,BufRead *.comp set filetype=glsl
     augroup END
 ]])
+vim.cmd([[
+    augroup hlsl_filetype
+        autocmd!
+        autocmd BufNewFile,BufRead *.vert.hlsl set filetype=hlsl
+        autocmd BufNewFile,BufRead *.frag.hlsl set filetype=hlsl
+        autocmd BufNewFile,BufRead *.gemo.hlsl set filetype=hlsl
+        autocmd BufNewFile,BufRead *.tesc.hlsl set filetype=hlsl
+        autocmd BufNewFile,BufRead *.tese.hlsl set filetype=hlsl
+        autocmd BufNewFile,BufRead *.comp.hlsl set filetype=hlsl
+    augroup END
+]])
 
-vim.opt.clipboard = ""
+vim.opt.clipboard = "unnamedplus"
+vim.g.clipboard = {
+  name = 'wl-clipboard',
+  copy = {
+    ['+'] = 'wl-copy',
+    ['*'] = 'wl-copy',
+  },
+  paste = {
+    ['+'] = 'wl-paste --no-newline',
+    ['*'] = 'wl-paste --no-newline',
+  },
+  cache_enabled = 1,
+}
 
 vim.opt.winblend = 0
