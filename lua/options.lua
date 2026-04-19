@@ -40,6 +40,14 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 vim.api.nvim_create_autocmd("FileType", {
+  pattern = {"odin", "glsl"},
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.expandtab = true
+  end,
+})
+vim.api.nvim_create_autocmd("FileType", {
   pattern = { "gdscript" },
   callback = function()
     vim.opt_local.autoindent = true
@@ -66,7 +74,9 @@ vim.cmd([[
     augroup glsl_filetype
         autocmd!
         autocmd BufNewFile,BufRead *.vert set filetype=glsl
+        autocmd BufNewFile,BufRead *.vs set filetype=glsl
         autocmd BufNewFile,BufRead *.frag set filetype=glsl
+        autocmd BufNewFile,BufRead *.fs set filetype=glsl
         autocmd BufNewFile,BufRead *.gemo set filetype=glsl
         autocmd BufNewFile,BufRead *.tesc set filetype=glsl
         autocmd BufNewFile,BufRead *.tese set filetype=glsl

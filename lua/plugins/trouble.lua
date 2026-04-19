@@ -1,6 +1,19 @@
 return{
   "folke/trouble.nvim",
-  opts = {}, -- for default options, refer to the configuration section for custom setup.
+  opts = {
+		modes = {
+			symbols = {
+				win = {
+					size = 0.3
+				}
+			},
+			lsp = {
+				win = {
+					size = 0.3
+				}
+			}
+		}
+	}, -- for default options, refer to the configuration section for custom setup.
   cmd = "Trouble",
   keys = {
     {

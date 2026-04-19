@@ -98,6 +98,11 @@ return {
 				},
 			}
 
+			vim.lsp.config["qmlls"] = {
+				cmd = { "qmlls", "-E" },
+				root_markers = { ".qmlls.ini", "CMakeLists.txt", ".git" },
+			}
+
 			vim.lsp.config["luals"] = {
 				-- Command and arguments to start the server.
 				cmd = { "lua-language-server" },
@@ -126,6 +131,7 @@ return {
 			vim.lsp.enable("stylua")
 			vim.lsp.enable("luals")
 			vim.lsp.enable("clangd")
+			-- vim.lsp.enable("qmlls")
 
 			require("mason").setup()
 			local ensure_installed = {

@@ -12,11 +12,11 @@ return {
 		indent = { enabled = false },
 		input = { enabled = false },
 		picker = { enabled = false },
-		notifier = { enabled = false },
+		notifier = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = false },
 		scroll = { enabled = false },
-		statuscolumn = { enabled = false },
+		statuscolumn = { enabled = true },
 		words = { enabled = false },
 		image = { enabled = false },
 		dashboard = {

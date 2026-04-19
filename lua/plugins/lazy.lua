@@ -13,7 +13,8 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-
+	require("plugins.typst"),
+	require("plugins.vim-tmux-navigator"),
 	require("plugins.rainbow-delimiters"),
 	require("plugins.oil"),
 	require("plugins.telescope"),
@@ -41,7 +42,8 @@ require("lazy").setup({
 	-- require("plugins.fugitive"),
 	-- require("plugins.mason-nvim-dap"),
 	--'tpope/vim-sleuth',
-	{ "numToStr/Comment.nvim",          opts = {} },
+	{ "norcalli/nvim-colorizer.lua" },
+	{ "numToStr/Comment.nvim", opts = {} },
 	{ "alexghergh/nvim-tmux-navigation" },
 	{ -- auto-pair plugin
 		"windwp/nvim-autopairs",
@@ -97,7 +99,7 @@ require("lazy").setup({
 		enabled = vim.g.have_nerd_font,
 	},
 	require("plugins.render-markdown"),
-	{                 -- which key plugin
+	{ -- which key plugin
 		"folke/which-key.nvim",
 		event = "VimEnter", -- Sets the loading event to 'VimEnter'
 		config = function() -- This is the function that runs, AFTER loading
